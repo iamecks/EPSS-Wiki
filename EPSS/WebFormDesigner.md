@@ -88,14 +88,14 @@ Any arbitrary label that best describe the data field
       "element": "input",
       "type": "text",
       "colspan": 3,
-      <b>"label": "Foo",<b>
+      <b>"label": "Foo",</b>
       "key": "contractor"
     },
     {
       "element": "input",
       "type": "text",
       "colspan": 3,
-      <b>"label": "Bar",<b>
+      <b>"label": "Bar",</b>
       "key": "mcrnum"
     },
     ...someElements
