@@ -5,7 +5,7 @@
 JSON (JavaScript Object Notation) is a standard file format that uses text to communicate data objects to array data types. We assume that user have a basic understanding on how to create and modify this file format.
 
 ## File Structure
-The file is divided into two section
+The file is divided into two sections
 
 Metadata:
 - title
@@ -32,8 +32,8 @@ Form Elements:
 
 ## Global API
 ### colspan
-Form rendered is virtually subdivided into 12 columns. Having a colspan of 6 means the element populates 1/2 of the form width. Thus the example below will render 3 elements with 2 with 1/4 of the witdh while the last element have the rest of the width. To use the whole width, you can use 12 or "full" as input.
-```
+Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means the element populates 1/2 of the form width. Example below will render 3 elements, 2 with 1/4 witdh while the last element have the rest of the width. To use the whole width, you can use either 12 or "full" as input.
+<pre><code>
     ...someElements
     {
       "element": "input",
@@ -57,11 +57,11 @@ Form rendered is virtually subdivided into 12 columns. Having a colspan of 6 mea
       "key": "address"
     },
     ...someElements
-```
+</code></pre>
 
 ### key
-Design team will provide this list. This important beacause these keys bind and map the fields back to the database. Any new fields must be requested.
-```
+Design team will provide this list. Keys bind and map the fields back to the database when persisting form data. Any new fields must be requested.
+<pre><code>
     ...someElements
     {
       "element": "input",
@@ -78,11 +78,11 @@ Design team will provide this list. This important beacause these keys bind and 
       <b>"key": "key2"</b>
     },
     ...someElements
-```
+</code></pre>
 
 ### label
-Any arbitrary label that best described the data field
-```
+Any arbitrary label that best describe the data field
+<pre><code>
     ...someElements
     {
       "element": "input",
@@ -99,11 +99,11 @@ Any arbitrary label that best described the data field
       "key": "mcrnum"
     },
     ...someElements
-```
+</code></pre>
 
 ### type
-Applicable only to Input type elements
-```
+Applicable only to "Input" type elements
+<pre><code>
     ...someElements
     {
       "element": "input",
@@ -127,12 +127,12 @@ Applicable only to Input type elements
       "key": "isSOP132Completed"
     },
     ...someElements
-```
+</code></pre>
 
 ## Element Specific API
 ### dropdown
-values - An array of strings that enumerates the dropdown options/selections.
-```
+values - An array of strings that enumerates the dropdown options or selections.
+<pre><code>
     ...someElements
     {
       "element": "dropdown",
@@ -147,18 +147,18 @@ values - An array of strings that enumerates the dropdown options/selections.
       ]</b>
     },
     ...someElements
-```
+</code></pre>
 
 ### table
 headers - An array of objects based on [key:label] format. This determines the table header labels and the associated key to the database.
 default - Optional array of objects that initializes predetermine fields.
-```
+<pre><code>
     ...someElements
  {
       "element": "table",
       "colspan": "full",
       "key": "table1",
-      "headers": [
+      <b>"headers": [
         {
           "register": "Meter #"
         },
@@ -269,10 +269,10 @@ default - Optional array of objects that initializes predetermine fields.
           "ctX1WhiteCable": "Red",
           "ctX1BlackCable": "Brown"
         }
-      ]
+      ]</b>
     },
     ...someElements
-```
+</code></pre>
 
 ## Recommendation
-Although its fine to work directly on the online editor, we recommend to use external tool like notepad++ or VS Code IDE to compose a schema. It gives more flexibility and better readility while writing a schema.
+Although its fine to work directly in the online editor, we recommend to use an external tool like notepad++ or VS Code IDE to compose a schema. It gives more flexibility and better readility while writing a schema.
