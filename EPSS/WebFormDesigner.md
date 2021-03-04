@@ -33,7 +33,7 @@ Form Elements:
 ## Global API
 ### colspan
 Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means the element populates 1/2 of the form width. Example below will render 3 elements, 2 with 1/4 witdh while the last element have the rest of the width. To use the whole width, you can use either 12 or "full" as input.
-```json
+<pre><code>
     ...someElements
     {
       "element": "input",
@@ -45,7 +45,7 @@ Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means
     {
       "element": "input",
       "type": "text",
-      ***"colspan": 3,***
+      <b>"colspan": 3,</b>
       "label": "Registration Number",
       "key": "mcrnum"
     },
@@ -57,7 +57,7 @@ Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means
       "key": "address"
     },
     ...someElements
-```
+</code></pre>
 
 ### key
 Design team will provide this list. Keys bind and map the fields back to the database when persisting form data. Any new fields must be requested.
