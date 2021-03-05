@@ -296,9 +296,7 @@ default - Optional array of objects that initializes predetermine fields.
 ## Recommendation
 Although its fine to work directly in the online editor, we recommend to use an external tool like notepad++ or VS Code IDE to compose a schema. It gives more flexibility and better readility while writing a schema.
 
-## Appendix A
-Input Fields
-
+## Appendix A: Input Fields
 |	Field	|	Label	|	Type	|
 |	---	|	---	|	---	|
 |	contractor	|	MCMS Owner	|	String	|
@@ -321,9 +319,7 @@ Input Fields
 |	isQF130Completed	|	Refer to QF-130	|	Boolean	|
 |	note	|	Notes:	|	String	|
 
-## Appendix B
-Table Fields
-
+## Appendix B: Table Fields
 |	Field	|	Label	|	Type	|
 |	---	|	---	|	---	|
 |	register	|	Meter #	|	Number	|
