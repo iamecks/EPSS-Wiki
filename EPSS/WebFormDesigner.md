@@ -32,7 +32,7 @@ Form Elements:
 
 ## Global API
 ### colspan
-Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means the element populates 1/2 of the form width. Example below will render 3 elements, 2 with 1/4 witdh while the last element have the rest of the width. To use the whole width, you can use either 12 or "full" as input.
+Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means the element populates 1/2 of the form width. Example below will render 3 elements, 2 quarter width elements while the last element populate half of the width. To use the whole width, you can use either 12 or "full" as input.
 <pre><code>
     ...someElements
     {
@@ -58,9 +58,10 @@ Form is rendered virtually on 12 subdivided columns. Having a colspan of 6 means
     },
     ...someElements
 </code></pre>
+![image](https://user-images.githubusercontent.com/30376638/110136502-c26a0e80-7d9d-11eb-8abb-8ed1d929ecfc.png)
 
 ### key
-Design team will provide this list. Keys bind and map the fields back to the database when persisting form data. Any new fields must be requested.
+Design team will provide this list. Keys bind and map the fields back to the database when persisting form data. Any new fields must be requested. See appendix A for available keys at this moment.
 <pre><code>
     ...someElements
     {
@@ -87,19 +88,20 @@ Any arbitrary label that best describe the data field
     {
       "element": "input",
       "type": "text",
-      "colspan": 3,
+      "colspan": 6,
       <b>"label": "Foo",</b>
       "key": "contractor"
     },
     {
       "element": "input",
       "type": "text",
-      "colspan": 3,
+      "colspan": 6,
       <b>"label": "Bar",</b>
       "key": "mcrnum"
     },
     ...someElements
 </code></pre>
+![image](https://user-images.githubusercontent.com/30376638/110136653-efb6bc80-7d9d-11eb-84d5-ea2e84db057e.png)
 
 ### type
 Applicable only to "Input" type elements
@@ -108,28 +110,43 @@ Applicable only to "Input" type elements
     {
       "element": "input",
       <b>"type": "text",</b>
-      "colspan": 6,
+      "colspan": 4,
       "label": "Building Address",
       "key": "address"
     },
         {
       "element": "input",
       <b>"type": "date",</b>
-      "colspan": 6,
+      "colspan": 4,
       "label": "Activation Date",
       "key": "activationDate"
     },
     {
       "element": "input",
       <b>"type": "checkbox",</b>
-      "colspan": 3,
+      "colspan": 12,
       "label": "Known Load SOP-132",
       "key": "isSOP132Completed"
     },
     ...someElements
 </code></pre>
+![image](https://user-images.githubusercontent.com/30376638/110136991-55a34400-7d9e-11eb-9e82-5922f8f18a85.png)
+
 
 ## Element Specific API
+### header
+Aside from the static title header based on title and version, this is the only non-input element. It always use the full width
+<pre><code>
+    ...someElements
+    {
+      "element": "header",
+      "type": "section",
+      "label": "PROJECT"
+    },
+    ...someElements
+</code></pre>
+![image](https://user-images.githubusercontent.com/30376638/110137068-6d7ac800-7d9e-11eb-925d-8ba83ef1140b.png)
+
 ### dropdown
 values - An array of strings that enumerates the dropdown options or selections.
 <pre><code>
@@ -148,9 +165,10 @@ values - An array of strings that enumerates the dropdown options or selections.
     },
     ...someElements
 </code></pre>
+![image](https://user-images.githubusercontent.com/30376638/110137106-78cdf380-7d9e-11eb-84c5-107698d6443b.png)
 
 ### table
-headers - An array of objects based on [key:label] format. This determines the table header labels and the associated key to the database.
+headers - An array of objects based on [key:label] format. This determines the table header labels and the associated key to the database. See appendix B for available keys at this moment.\
 default - Optional array of objects that initializes predetermine fields.
 <pre><code>
     ...someElements
@@ -273,6 +291,54 @@ default - Optional array of objects that initializes predetermine fields.
     },
     ...someElements
 </code></pre>
+![image](https://user-images.githubusercontent.com/30376638/110137182-8e431d80-7d9e-11eb-8442-7282d0ea57f6.png)
 
 ## Recommendation
 Although its fine to work directly in the online editor, we recommend to use an external tool like notepad++ or VS Code IDE to compose a schema. It gives more flexibility and better readility while writing a schema.
+
+## Appendix A
+Input Fields
+
+|	Field	|	Label	|	Type	|
+|	---	|	---	|	---	|
+|	contractor	|	MCMS Owner	|	String	|
+|	mcrnum	|	Registration Number	|	String	|
+|	address	|	Building Address	|	String	|
+|	productCode	|	Model / Configuration	|	String	|
+|	activationDate	|	Activation Date	|	Date	|
+|	voltage	|	Rated Voltage	|	String	|
+|	approvalNum	|	Approval Number	|	String	|
+|	meterBadge	|	Badge Number	|	String	|
+|	mac	|	MAC Address	|	String	|
+|	serial	|	Serial Number	|	String	|
+|	sealYear	|	Seal Year	|	Number	|
+|	meterLocation	|	Location	|	String	|
+|	remarks	|	Remarks	|	String	|
+|	isSOP132Completed	|	Known Load SOP-132	|	Boolean	|
+|	isSOP135Completed	|	Visual SOP-135	|	Boolean	|
+|	hasServiceMeterVerification	|	Service - Meter Verification	|	Boolean	|
+|	hasServiceDesc	|	Service Description	|	Boolean	|
+|	isQF130Completed	|	Refer to QF-130	|	Boolean	|
+|	note	|	Notes:	|	String	|
+
+## Appendix B
+Table Fields
+
+|	Field	|	Label	|	Type	|
+|	---	|	---	|	---	|
+|	register	|	Meter #	|	Number	|
+|	unit	|	Service	|	String	|
+|	ctID	|	CT ID	|	String	|
+|	ctSerial	|	CT Serial #	|	String	|
+|	phase	|	Phase	|	String	|
+|	ctPolarity	|	CT Polarity	|	String	|
+|	extCableNum	|	Extension Cable #	|	String	|
+|	ctX1WhiteExt	|	CT X1 - White Extension	|	String	|
+|	ctX1WhiteCable	|	CT X1 - White Cable	|	String	|
+|	ctX1WhiteModule	|	CT X1 - White Module	|	String	|
+|	ctX1BlackExt	|	CT X2 - Black Extension	|	String	|
+|	ctX1BlackCable	|	CT X2 - Black Cable	|	String	|
+|	ctX1BlackModule	|	CT X2 - Black Module	|	String	|
+|	ctRatio	|	CT Ratio (/80mA)	|	String	|
+|	extMultiplier	|	Billing Multiplier	|	String	|
+|	seZeroFourStatus	|	Pass / Fail	|	String	|
