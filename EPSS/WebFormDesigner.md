@@ -133,7 +133,7 @@ Any arbitrary label that best describe the data field
 ![image](https://user-images.githubusercontent.com/30376638/110136653-efb6bc80-7d9d-11eb-84d5-ea2e84db057e.png)
 
 ### type
-Describes the data format. Applicable only to "Input" type elements
+Describes the data format and also determines how element will be rendered. Applicable only to "Input" type elements. At this moment, we only support text, date & checkbox. For future development, some type can be possibly added. See possible types [here](https://www.w3schools.com/tags/tag_input.asp).
 <pre><code>
     ...someElements
     {
