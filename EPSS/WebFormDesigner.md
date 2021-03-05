@@ -29,6 +29,35 @@ Form Elements:
   ]
 }
 ```
+A complete working file looks like below:
+```json
+{
+  "title": "Triacta GATEWAY Installation Form",
+  "version": "Met-QF-132n-Rev.03",
+  "status": "production",
+  "elements": [
+    {
+      "element": "header",
+      "type": "section",
+      "label": "PROJECT"
+    },
+    {
+      "element": "input",
+      "type": "text",
+      "colspan": 6,
+      "label": "MCMS Owner",
+      "key": "contractor"
+    },
+    {
+      "element": "input",
+      "type": "text",
+      "colspan": 6,
+      "label": "Registration Number",
+      "key": "mcrnum"
+    }
+   ]
+}
+```
 
 ## Global API
 ### colspan
