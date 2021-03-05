@@ -104,7 +104,7 @@ Any arbitrary label that best describe the data field
 ![image](https://user-images.githubusercontent.com/30376638/110136653-efb6bc80-7d9d-11eb-84d5-ea2e84db057e.png)
 
 ### type
-Applicable only to "Input" type elements
+Describes the data format. Applicable only to "Input" type elements
 <pre><code>
     ...someElements
     {
