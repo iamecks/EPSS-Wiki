@@ -177,7 +177,7 @@ Aside from the static title header based on title and version, this is the only 
 ![image](https://user-images.githubusercontent.com/30376638/110137068-6d7ac800-7d9e-11eb-925d-8ba83ef1140b.png)
 
 ### dropdown
-values - An array of strings that enumerates the dropdown options or selections.
+**values** - An array of strings that enumerates the dropdown options or selections.
 <pre><code>
     ...someElements
     {
@@ -197,8 +197,8 @@ values - An array of strings that enumerates the dropdown options or selections.
 ![image](https://user-images.githubusercontent.com/30376638/110137106-78cdf380-7d9e-11eb-84c5-107698d6443b.png)
 
 ### table
-headers - An array of objects based on [key:label] format. This determines the table header labels and the associated key to the database. See appendix B for available keys at this moment.\
-default - Optional array of objects that initializes predetermine fields.
+**headers** - An array of objects based on [key:label] format. This determines the table header labels and the associated key to the database. See appendix B for available keys at this moment.\
+**default** - Optional array of objects that initializes predetermine fields.
 <pre><code>
     ...someElements
  {
