@@ -198,6 +198,7 @@ Aside from the static title header based on title and version, this is the only 
 
 ### table
 **headers** - An array of objects based on **`[key:label]`** format. This determines the table header labels and the associated key to the database. See appendix B for available keys at this moment.\
+\
 **default** - Optional array of objects that initializes predetermine fields.
 <pre><code>
     ...someElements
@@ -321,6 +322,78 @@ Aside from the static title header based on title and version, this is the only 
     ...someElements
 </code></pre>
 ![image](https://user-images.githubusercontent.com/30376638/110137182-8e431d80-7d9e-11eb-8442-7282d0ea57f6.png)
+
+**mergerows** - A property that determines merging rows on the table. It is only applied to the first entry/phase of the group.
+- rowspan - number of merging rows
+- keys - table fields that merging rows is applicable to. See appendix B
+<pre><code>
+    ...someElements
+      "default": [
+        {
+          "register": 1,
+          "ctX1WhiteCable": "Black",
+          "ctX1BlackCable": "Red",
+          <b>"mergerows": {
+            "rowspan": 3,
+            "keys": [
+              "register",
+              "ctID"
+            ]
+          }</b>
+        },
+        {
+          "register": 1,
+          "ctX1WhiteCable": "Black",
+          "ctX1BlackCable": "White"
+        },
+        {
+          "register": 1,
+          "ctX1WhiteCable": "Black",
+          "ctX1BlackCable": "Green"
+        },
+        {
+          "register": 2,
+          "ctX1WhiteCable": "Black",
+          "ctX1BlackCable": "Blue",
+          <b>"mergerows": {
+            "rowspan": 2,
+            "keys": [
+              "register",
+              "ctID"
+            ]
+          }</b>
+        },
+        {
+          "register": 2,
+          "ctX1WhiteCable": "Black",
+          "ctX1BlackCable": "Yellow"
+        },
+        {
+          "register": 3,
+          "ctX1WhiteCable": "Black",
+          "ctX1BlackCable": "Orange",
+          <b>"mergerows": {
+            "rowspan": 3,
+            "keys": [
+              "register",
+              "ctID"
+            ]
+          }</b>
+        },
+        {
+          "register": 3,
+          "ctX1WhiteCable": "Red",
+          "ctX1BlackCable": "White"
+        },
+        {
+          "register": 3,
+          "ctX1WhiteCable": "Red",
+          "ctX1BlackCable": "Green"
+        }
+      ]
+    ...someElements
+</code></pre>
+![image](https://user-images.githubusercontent.com/30376638/112370094-5c451d00-8cb3-11eb-9d4a-8b742d97a938.png)
 
 ## Recommendation
 Although its fine to work directly in the online editor, we recommend to use an external tool like notepad++ or VS Code IDE to compose a schema. It gives more flexibility and better readility while writing a schema.
