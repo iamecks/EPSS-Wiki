@@ -1,2 +1,2 @@
-# EPSS-Wiki
-A collection of EPSS/EPIT related documents.
+# EPS-Wiki
+A collection of EPS/EPIT related documents.
