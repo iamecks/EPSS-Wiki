@@ -1,5 +1,5 @@
-# EPSS Web Form Schema Designer
-> An EPSS feature that integrates QMS forms design and version control. It generates form by rendering JSON file with valid syntax. Visit sandbox on [EPSS](https://salmon-sand-0d3da2a10.azurestaticapps.net).
+# EPS Web Form Schema Designer
+> An EPS feature that integrates QMS forms design and version control. It generates form by rendering JSON file with valid syntax. Visit sandbox on [EPS](https://salmon-sand-0d3da2a10.azurestaticapps.net).
 
 ## Requirements
 JSON (JavaScript Object Notation) is a standard file format that uses text to communicate data objects to array data types. We assume that user have a basic understanding on how to create and modify this file format.
